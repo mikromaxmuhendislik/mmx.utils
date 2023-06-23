@@ -7,7 +7,7 @@
 		<PackageId>mmx.utils</PackageId>
 		<Authors>Mikromax</Authors>
 		<Company>Mikromax Muhendislik</Company>
-		<PackageReadmeFile>readme.md</PackageReadmeFile>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<PackageVersion>1.0.1</PackageVersion>
 	</PropertyGroup>
 	<ItemGroup>
