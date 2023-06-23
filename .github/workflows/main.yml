@@ -1,0 +1,33 @@
+name: Build and Publish Nuget Package
+
+on:
+  push:
+    branches: [ main ]  # or the branch where you want this action to trigger
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '7.0.x' # use your dotnet version
+
+    - name: Restore dependencies
+      run: dotnet restore
+
+    - name: Build
+      run: dotnet build --configuration Release --no-restore
+
+    - name: Test
+      run: dotnet test --no-restore --verbosity normal
+
+    - name: Pack
+      run: dotnet pack --configuration Release --no-restore --output nupkg
+
+    - name: Push
+      run: dotnet nuget push "nupkg/*.nupkg" --api-key ${{ secrets.GITHUB_TOKEN }} --source https://nuget.pkg.github.com/OWNER/index.json
