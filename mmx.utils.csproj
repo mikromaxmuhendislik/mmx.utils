@@ -1,9 +1,14 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<TargetFramework>net7.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
+		<PackageId>mmx.utils</PackageId>
+		<Authors>Mikromax</Authors>
+		<Company>Mikromax Muhendislik</Company>
+		<PackageReadmeFile>readme.md</PackageReadmeFile>
+		<PackageVersion>1.0.0</PackageVersion>
 	</PropertyGroup>
 	<ItemGroup>
 		<PackageReference Include="FluentFTP" Version="42.1.0" />
@@ -26,5 +31,6 @@
 			<Generator>PublicResXFileCodeGenerator</Generator>
 			<LastGenOutput>V7LanguageResources.Designer.cs</LastGenOutput>
 		</EmbeddedResource>
+		<None Include="README.md" Pack="true" PackagePath="\"/>
 	</ItemGroup>
 </Project>
